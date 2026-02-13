@@ -25,20 +25,8 @@ Tool B (Search): Queries Google/Web using the Tavily API.
 
 Synthesis: The LLM receives context from both streams and generates a final answer comparing the two.
 
-Architecture Diagram
-Code snippet
-graph TD
-    User[GUI Client] -->|Text Query| Gemini[Gemini LLM]
-    Gemini -->|Needs Info| Router{Tool Router}
-    
-    subgraph "Async Parallel Execution"
-    Router -->|JSON-RPC| PDF[PDF RAG Tool]
-    Router -->|JSON-RPC| Web[Tavily Search Tool]
-    end
-    
-    PDF -->|Context| Gemini
-    Web -->|Live Data| Gemini
-    Gemini -->|Final Comparison| User
+## Architecture Diagram
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/313646c1-1998-4b78-8802-fe97f063e6cb" />
 
 ## 🛠️ Tech Stack
 Core Language: Python 🐍
@@ -55,7 +43,8 @@ Vector Database & RAG: txtai (w/ FAISS backend)
 Concurrency: asyncio (Python standard library)
 
 ## 📐 Technical Implementation Details
-1. Vector Embeddings (RAG)
+1.
+Vector Embeddings (RAG)
 We use a Sentence Transformer model to map text into a "Concept Space."
 
 Model: all-MiniLM-L6-v2 (via txtai)
@@ -68,7 +57,8 @@ Max Sequence Length: 256 tokens per chunk.
 
 Inductive Bias: The model assumes that nearby points in the vector space share semantic meaning, allowing us to find relevant answers even without exact keyword matches.
 
-2. Asyncio Concurrency
+2.
+Asyncio Concurrency
 To ensure low latency, the system utilizes asyncio for true parallelism.
 
 Instead of blocking execution (waiting 3s for PDF + 5s for Web = 8s total), we use await asyncio.sleep() mechanics to run tasks concurrently.
