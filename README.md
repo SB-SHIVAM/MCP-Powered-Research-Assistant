@@ -66,19 +66,8 @@ Instead of blocking execution (waiting 3s for PDF + 5s for Web = 8s total), we u
 Result: Total time is determined by the slowest single task, not the sum of all tasks.
 
 ## 📂 File Structure
-Bash
-MCP-Research-Assistant/
-├── client/
-│   └── gui_client.py       # Frontend/Client to send requests
-├── server/
-│   ├── main.py             # Entry point for MCP Server
-│   ├── tools.py            # Definitions for PDF & Tavily tools
-│   └── rag_engine.py       # txtai logic (Embeddings & FAISS)
-├── data/
-│   └── source_docs/        # Place your PDFs here
-├── requirements.txt        # Python dependencies
-├── .env                    # API Keys (Gemini, Tavily)
-└── README.md
+<img width="448" height="523" alt="image" src="https://github.com/user-attachments/assets/e9024c1a-e364-4ec7-829f-d8004e717cf7" />
+
 ## ⚡ Setup & Installation
 1. Clone the Repository
 
