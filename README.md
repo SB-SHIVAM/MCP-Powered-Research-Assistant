@@ -86,16 +86,15 @@ source venv/bin/activate
 
 Bash
 pip install -r requirements.txt
+
 4. Configure API Keys
 Create a .env file in the root directory:
-
-Code snippet
-GOOGLE_API_KEY=your_gemini_key_here
-TAVILY_API_KEY=your_tavily_key_here
+  GOOGLE_API_KEY=your_gemini_key_here
+  TAVILY_API_KEY=your_tavily_key_here
 5. Run the Server
 
 Bash
-python server/main.py
+python python gui_client.py
 ## 🔮 Future Improvements
 Implement Recursive Character Splitting for better context retention across chunk boundaries.
 
